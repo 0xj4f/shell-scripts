@@ -62,6 +62,10 @@ Remove numbers in history
 history | awk '{$1=""; print substr($0, 2)}'
 ```
 
+SCP copy remote to local
+```bash
+scp -i ~/.ssh/key ubuntu@10.10.10.10:'/home/ubuntu/backups/*.tar.gz' ./
+```
 
 
 get system information
