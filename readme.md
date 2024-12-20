@@ -87,6 +87,26 @@ Vendor ID:               AuthenticAMD
     Core(s) per socket:  2
 
 ```
+
+get IP addresses
+```bash
+╰─$ ip -br -c link show                                                                                                    255 ↵
+lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP>
+eth0             UP             8a:2f:d6:24:21:fc <BROADCAST,MULTICAST,UP,LOWER_UP>
+eth1             UP             16:eb:e4:3a:79:af <BROADCAST,MULTICAST,UP,LOWER_UP>
+docker0          DOWN           02:42:0b:54:43:44 <NO-CARRIER,BROADCAST,MULTICAST,UP>
+br-d49cf654b3b5  UP             02:42:a1:f2:58:05 <BROADCAST,MULTICAST,UP,LOWER_UP>
+vethce6e9ae@if41 UP             ba:ad:9e:20:02:fa <BROADCAST,MULTICAST,UP,LOWER_UP>
+veth79f2830@if43 UP             5e:f1:4f:fc:d3:e8 <BROADCAST,MULTICAST,UP,LOWER_UP>
+╰─$ ip -br -c addr show
+lo               UNKNOWN        127.0.0.1/8 ::1/128
+eth0             UP             167.71.192.77/20 10.15.0.5/16 fe80::882f:d6ff:fe24:21fc/64
+eth1             UP             10.104.0.2/20 fe80::14eb:e4ff:fe3a:79af/64
+docker0          DOWN           172.17.0.1/16 fe80::42:bff:fe54:4344/64
+br-d49cf654b3b5  UP             172.18.0.1/16 fe80::42:a1ff:fef2:5805/64
+vethce6e9ae@if41 UP             fe80::b8ad:9eff:fe20:2fa/64
+veth79f2830@if43 UP             fe80::5cf1:4fff:fefc:d3e8/64
+```
 ### Shell Operators 
 
 | Symbol / Operator |                                                                    Description                                                                   |
